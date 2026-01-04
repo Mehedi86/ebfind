@@ -1,24 +1,44 @@
-import { Button } from "@/components/ui/button"
+"use client"
+
+import React from 'react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export default function Banner() {
   return (
-    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[85vh] xl:h-screen min-h-[350px] sm:min-h-[400px] overflow-hidden">
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-        style={{
-          backgroundImage: "url('/image/banner/banner3.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+    <div className="w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 my-4 sm:my-8 md:my-12 lg:my-16 mx-auto overflow-hidden h-46 md:h-75 lg:h-100">
+      <Carousel 
+        className="w-full h-full"
+        opts={{
+          align: "start",
+          loop: true,
         }}
       >
-      </div>
-      {/* <div className="w-full md:w-5/12 absolute z-40 bg-amber-800 p-4 md:p-6 text-white bottom-4 md:bottom-17 right-4 md:right-16">
-        <p className="text-sm md:text-base">Donate blood, save lives. One small act can give someone a second chance. Join our blood donation campaign and be a hero today—your kindness can make a lifetime of difference. ❤️</p>
-        <Button className="cursor-pointer rounded mt-2">Get Started</Button>
-      </div> */}
+        <CarouselContent className="ml-0 h-full">
+          <CarouselItem className="pl-0 basis-full h-full">
+            <img 
+              src="/image/banner/banner1.jpg" 
+              alt="Banner 1" 
+              className="w-full h-full object-cover"
+            />
+          </CarouselItem>
+          
+          <CarouselItem className="pl-0 basis-full h-full">
+            <img 
+              src="/image/banner/banner2.jpg" 
+              alt="Banner 2" 
+              className="w-full h-full object-cover"
+            />
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious className="left-2 sm:left-4 z-20 bg-white/80 hover:bg-white text-gray-800 border-0 h-8 w-8 sm:h-10 sm:w-10" />
+        <CarouselNext className="right-2 sm:right-4 z-20 bg-white/80 hover:bg-white text-gray-800 border-0 h-8 w-8 sm:h-10 sm:w-10" />
+      </Carousel>
     </div>
   )
 }
-
-
