@@ -1,241 +1,216 @@
 "use client"
 
 import React from 'react'
-import { Calendar, MapPin, Droplet, Clock, Phone, User, AlertCircle } from 'lucide-react'
+import Link from 'next/link'
+import { Calendar, MapPin, Droplet, Clock, Phone, User, AlertCircle, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 // Mock data - replace with actual data from your API
 const mockRequests = [
-  {
-    id: 1,
-    bloodType: 'O+',
-    patientName: 'John Doe',
-    location: 'City Hospital, Downtown',
-    urgency: 'urgent',
-    units: 2,
-    contact: '+1234567890',
-    date: new Date(), // Today
-    time: '2 hours ago'
-  },
-  {
-    id: 2,
-    bloodType: 'A-',
-    patientName: 'Sarah Smith',
-    location: 'Medical Center, Uptown',
-    urgency: 'high',
-    units: 1,
-    contact: '+1234567891',
-    date: new Date(), // Today
-    time: '5 hours ago'
-  },
-  {
-    id: 3,
-    bloodType: 'B+',
-    patientName: 'Mike Johnson',
-    location: 'General Hospital, Midtown',
-    urgency: 'normal',
-    units: 3,
-    contact: '+1234567892',
-    date: new Date(Date.now() - 86400000), // Yesterday
-    time: 'Yesterday, 3:00 PM'
-  },
-  {
-    id: 4,
-    bloodType: 'AB-',
-    patientName: 'Emily Brown',
-    location: 'Emergency Care, Westside',
-    urgency: 'urgent',
-    units: 1,
-    contact: '+1234567893',
-    date: new Date(Date.now() - 86400000), // Yesterday
-    time: 'Yesterday, 10:00 AM'
-  },
+    {
+        id: 1,
+        bloodType: 'O+',
+        patientName: 'John Doe',
+        location: 'City Hospital, Downtown',
+        urgency: 'urgent',
+        units: 2,
+        contact: '+1234567890',
+        date: new Date(), // Today
+        time: '2 hours ago'
+    },
+    {
+        id: 2,
+        bloodType: 'A-',
+        patientName: 'Sarah Smith',
+        location: 'Medical Center, Uptown',
+        urgency: 'high',
+        units: 1,
+        contact: '+1234567891',
+        date: new Date(), // Today
+        time: '5 hours ago'
+    },
+    {
+        id: 3,
+        bloodType: 'B+',
+        patientName: 'Mike Johnson',
+        location: 'General Hospital, Midtown',
+        urgency: 'normal',
+        units: 3,
+        contact: '+1234567892',
+        date: new Date(Date.now() - 86400000), // Yesterday
+        time: 'Yesterday, 3:00 PM'
+    },
+    {
+        id: 4,
+        bloodType: 'AB-',
+        patientName: 'Emily Brown',
+        location: 'Emergency Care, Westside',
+        urgency: 'urgent',
+        units: 1,
+        contact: '+1234567893',
+        date: new Date(Date.now() - 86400000), // Yesterday
+        time: 'Yesterday, 10:00 AM'
+    },
+    {
+        id: 5,
+        bloodType: 'AB-',
+        patientName: 'Emily Brown',
+        location: 'Emergency Care, Westside',
+        urgency: 'urgent',
+        units: 1,
+        contact: '+1234567893',
+        date: new Date(Date.now() - 86400000), // Yesterday
+        time: 'Yesterday, 10:00 AM'
+    },
 ]
 
 export default function Requests() {
-  // Filter requests for today and yesterday
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  
-  const yesterday = new Date(today)
-  yesterday.setDate(yesterday.getDate() - 1)
+    // Filter requests for today and yesterday
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
 
-  const todayRequests = mockRequests.filter(req => {
-    const reqDate = new Date(req.date)
-    reqDate.setHours(0, 0, 0, 0)
-    return reqDate.getTime() === today.getTime()
-  })
+    const yesterday = new Date(today)
+    yesterday.setDate(yesterday.getDate() - 1)
 
-  const yesterdayRequests = mockRequests.filter(req => {
-    const reqDate = new Date(req.date)
-    reqDate.setHours(0, 0, 0, 0)
-    return reqDate.getTime() === yesterday.getTime()
-  })
-
-  const getUrgencyColor = (urgency: string) => {
-    switch (urgency) {
-      case 'urgent':
-        return 'bg-red-600 text-white'
-      case 'high':
-        return 'bg-orange-500 text-white'
-      case 'normal':
-        return 'bg-blue-500 text-white'
-      default:
-        return 'bg-gray-500 text-white'
-    }
-  }
-
-  const getUrgencyLabel = (urgency: string) => {
-    switch (urgency) {
-      case 'urgent':
-        return 'Urgent'
-      case 'high':
-        return 'High Priority'
-      case 'normal':
-        return 'Normal'
-      default:
-        return urgency
-    }
-  }
-
-  const RequestCard = ({ request }: { request: typeof mockRequests[0] }) => (
-    <div className="bg-white/40 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-        <div className="flex-1">
-          <div className="flex items-start justify-between mb-3">
-            <div className="flex items-center gap-3">
-              <div className="bg-red-100 p-3 rounded-lg">
-                <Droplet className="h-6 w-6 text-red-600" fill="currentColor" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-800">{request.bloodType}</h3>
-                <p className="text-sm text-gray-500">Blood Type</p>
-              </div>
-            </div>
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getUrgencyColor(request.urgency)}`}>
-              {getUrgencyLabel(request.urgency)}
-            </span>
-          </div>
-
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center gap-2 text-gray-700">
-              <User className="h-4 w-4 text-gray-500" />
-              <span className="font-medium">{request.patientName}</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <MapPin className="h-4 w-4 text-gray-500" />
-              <span>{request.location}</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <Droplet className="h-4 w-4 text-gray-500" />
-              <span>{request.units} unit{request.units > 1 ? 's' : ''} needed</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <Clock className="h-4 w-4 text-gray-500" />
-              <span>{request.time}</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2 md:min-w-50">
-          <div className="flex items-center gap-2 text-gray-700 mb-2">
-            <Phone className="h-4 w-4 text-gray-500" />
-            <span className="font-medium">{request.contact}</span>
-          </div>
-          <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
-            <AlertCircle className="h-4 w-4 mr-2" />
-            Respond to Request
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
-
-  const DateSection = ({ 
-    title, 
-    date, 
-    requests 
-  }: { 
-    title: string
-    date: Date
-    requests: typeof mockRequests 
-  }) => {
-    if (requests.length === 0) return null
-
-    const formattedDate = date.toLocaleDateString('en-US', { 
-      weekday: 'long', 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    const todayRequests = mockRequests.filter(req => {
+        const reqDate = new Date(req.date)
+        reqDate.setHours(0, 0, 0, 0)
+        return reqDate.getTime() === today.getTime()
     })
 
-    return (
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="bg-red-600 p-2 rounded-lg">
-            <Calendar className="h-5 w-5 text-white" />
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold text-white">{title}</h2>
-            <p className="text-sm text-gray-200">{formattedDate}</p>
-          </div>
-          <span className="ml-auto px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold">
-            {requests.length} request{requests.length > 1 ? 's' : ''}
-          </span>
-        </div>
-        <div className="space-y-4">
-          {requests.map((request) => (
-            <RequestCard key={request.id} request={request} />
-          ))}
-        </div>
-      </div>
-    )
-  }
+    const yesterdayRequests = mockRequests.filter(req => {
+        const reqDate = new Date(req.date)
+        reqDate.setHours(0, 0, 0, 0)
+        return reqDate.getTime() === yesterday.getTime()
+    })
 
-  return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-white mb-2">
-            Emergency Blood Requests
-          </h1>
-          <p className="text-lg text-gray-200">
-            Recent requests for blood donations. Help save lives today.
-          </p>
-        </div>
+    const getUrgencyColor = (urgency: string) => {
+        switch (urgency) {
+            case 'urgent':
+                return 'bg-red-600 text-white'
+            case 'high':
+                return 'bg-orange-500 text-white'
+            case 'normal':
+                return 'bg-blue-500 text-white'
+            default:
+                return 'bg-gray-500 text-white'
+        }
+    }
 
-        {/* Requests by Date */}
-        <div>
-          {todayRequests.length > 0 && (
-            <DateSection 
-              title="Today" 
-              date={today} 
-              requests={todayRequests} 
-            />
-          )}
+    const getUrgencyLabel = (urgency: string) => {
+        switch (urgency) {
+            case 'urgent':
+                return 'Urgent'
+            case 'high':
+                return 'High Priority'
+            case 'normal':
+                return 'Normal'
+            default:
+                return urgency
+        }
+    }
 
-          {yesterdayRequests.length > 0 && (
-            <DateSection 
-              title="Yesterday" 
-              date={yesterday} 
-              requests={yesterdayRequests} 
-            />
-          )}
-
-          {todayRequests.length === 0 && yesterdayRequests.length === 0 && (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <Droplet className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                No Recent Requests
-              </h3>
-              <p className="text-gray-500">
-                There are no blood requests for today or yesterday.
-              </p>
+    const RequestCard = ({ request }: { request: typeof mockRequests[0] }) => (
+        <div className="bg-white/40 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow p-3 sm:p-4 border border-white/20">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                    <div className="bg-red-100 p-1.5 sm:p-2 rounded-lg shrink-0">
+                        <Droplet className="h-4 w-4 sm:h-5 sm:w-5 text-red-600" fill="currentColor" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
+                            <h3 className="text-base sm:text-lg font-bold text-gray-900">{request.bloodType}</h3>
+                            <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${getUrgencyColor(request.urgency)}`}>
+                                {getUrgencyLabel(request.urgency)}
+                            </span>
+                        </div>
+                        <div className="flex flex-wrap items-center gap-x-2 sm:gap-x-4 gap-y-1 text-xs sm:text-sm text-gray-700">
+                            <div className="flex items-center gap-1">
+                                <User className="h-3 w-3 text-gray-500 shrink-0" />
+                                <span className="truncate max-w-30sm:max-w-none">{request.patientName}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                                <MapPin className="h-3 w-3 text-gray-500 shrink-0" />
+                                <span className="truncate max-w-30 sm:max-w-none">{request.location}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                                <Droplet className="h-3 w-3 text-gray-500 shrink-0" />
+                                <span>{request.units} unit{request.units > 1 ? 's' : ''}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                                <Clock className="h-3 w-3 text-gray-500 shrink-0" />
+                                <span className="hidden xs:inline">{request.time}</span>
+                                <span className="xs:hidden text-xs">{request.time.split(',')[0]}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-2 shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0">
+                    <div className="flex items-center gap-1 text-gray-800 text-xs sm:text-sm">
+                        <Phone className="h-3 w-3 text-gray-600 shrink-0" />
+                        <span className="font-medium hidden sm:inline">{request.contact}</span>
+                        <span className="font-medium sm:hidden text-xs">{request.contact.slice(0, 8)}...</span>
+                    </div>
+                    <Button size="sm" className="bg-red-900 hover:bg-red-700 text-white whitespace-nowrap text-xs sm:text-sm px-3 sm:px-4 cursor-pointer">
+                        <AlertCircle className="h-3 w-3 mr-1" />
+                        <span className="hidden sm:inline">Respond</span>
+                        <span className="sm:hidden">Help</span>
+                    </Button>
+                </div>
             </div>
-          )}
         </div>
-      </div>
-    </div>
-  )
+    )
+
+    // Combine requests
+    const allRequests = [...todayRequests, ...yesterdayRequests]
+    const displayedRequests = allRequests.slice(0, 4)
+    const hasMoreRequests = allRequests.length > 4
+
+    return (
+        <div className="w-full py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+                {/* Header */}
+                <div className="mb-6 sm:mb-8 text-center">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+                        Emergency Blood Requests
+                    </h1>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-200 px-2">
+                        Recent requests for blood donations. <br />Help save lives today.
+                    </p>
+                </div>
+
+                {/* Requests Container */}
+                {displayedRequests.length > 0 ? (
+                    <div>
+                        <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                            {displayedRequests.map((request) => (
+                                <RequestCard key={request.id} request={request} />
+                            ))}
+                        </div>
+
+                        {hasMoreRequests && (
+                            <div className="text-center">
+                                <Link href="/requests">
+                                    <Button className="w-full sm:w-auto px-3 py-2 mt-4 text-base sm:text-lg font-semibold text-white cursor-pointer">
+                                        View All Requests
+                                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
+                                    </Button>
+                                </Link>
+                            </div>
+                        )}
+                    </div>
+                ) : (
+                    <div className="bg-white rounded-lg shadow-md p-8 sm:p-12 text-center">
+                        <Droplet className="h-12 w-12 sm:h-16 sm:w-16 text-gray-300 mx-auto mb-4" />
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
+                            No Recent Requests
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-500">
+                            There are no blood requests for today or yesterday.
+                        </p>
+                    </div>
+                )}
+            </div>
+        </div>
+    )
 }

@@ -83,17 +83,6 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="sm"
-              className={scrolled 
-                ? "text-gray-700 hover:text-red-600 hover:bg-red-50" 
-                : "text-white hover:text-red-200 hover:bg-white/10 backdrop-blur-sm"
-              }
-            >
-              <Search className="h-4 w-4 mr-2" />
-              Search
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
               className={scrolled
                 ? "text-gray-700 hover:text-red-600 hover:bg-red-50 border border-gray-300"
                 : "text-white hover:text-red-200 hover:bg-white/10 backdrop-blur-sm border border-white/30"
@@ -159,18 +148,6 @@ export default function Navbar() {
           <div className={`pt-4 space-y-2 border-t transition-colors ${
             scrolled ? 'border-gray-200' : 'border-white/20'
           }`}>
-            <Button
-              variant="outline"
-              className={`w-full justify-start ${
-                scrolled
-                  ? 'text-gray-700 border-gray-300 hover:bg-red-50 hover:text-red-600'
-                  : 'text-gray-700 border-white/30 hover:bg-white/10 hover:text-white'
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <Search className="h-4 w-4 mr-2" />
-              Search
-            </Button>
             <Button
               variant="outline"
               className={`w-full justify-start ${
