@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/header/navbar/Navbar";
 
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,11 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="min-h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-full`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
       </body>
     </html>
