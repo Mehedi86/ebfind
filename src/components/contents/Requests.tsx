@@ -111,7 +111,7 @@ export default function Requests() {
     }
 
     const RequestCard = ({ request }: { request: typeof mockRequests[0] }) => (
-        <div className="bg-white/40 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow p-3 sm:p-4 border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded shadow-md hover:shadow-lg transition-shadow p-3 sm:p-4 border border-white/30 ">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
                 <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                     <div className="bg-red-100 p-1.5 sm:p-2 rounded-lg shrink-0">
@@ -120,38 +120,38 @@ export default function Requests() {
                     <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
                             <h3 className="text-base sm:text-lg font-bold text-gray-900">{request.bloodType}</h3>
-                            <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${getUrgencyColor(request.urgency)}`}>
+                            <span className={`px-2 py-0.5 rounded-full text-sm font-semibold ${getUrgencyColor(request.urgency)}`}>
                                 {getUrgencyLabel(request.urgency)}
                             </span>
                         </div>
-                        <div className="flex flex-wrap items-center gap-x-2 sm:gap-x-4 gap-y-1 text-xs sm:text-sm text-gray-700">
-                            <div className="flex items-center gap-1">
-                                <User className="h-3 w-3 text-gray-500 shrink-0" />
+                        <div className="flex flex-wrap items-center gap-x-2 sm:gap-x-4 gap-y-1 text-sm text-gray-700 font-semibold">
+                            <div className="flex items-center gap-1 text-neutral-900">
+                                <User className="h-3 w-3 shrink-0" />
                                 <span className="truncate max-w-30sm:max-w-none">{request.patientName}</span>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <MapPin className="h-3 w-3 text-gray-500 shrink-0" />
+                            <div className="flex items-center gap-1 text-neutral-900">
+                                <MapPin className="h-3 w-3 shrink-0" />
                                 <span className="truncate max-w-30 sm:max-w-none">{request.location}</span>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <Droplet className="h-3 w-3 text-gray-500 shrink-0" />
+                            <div className="flex items-center gap-1 text-neutral-900">
+                                <Droplet className="h-3 w-3 shrink-0" />
                                 <span>{request.units} unit{request.units > 1 ? 's' : ''}</span>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <Clock className="h-3 w-3 text-gray-500 shrink-0" />
+                            <div className="flex items-center gap-1 text-neutral-900">
+                                <Clock className="h-3 w-3 shrink-0" />
                                 <span className="hidden xs:inline">{request.time}</span>
-                                <span className="xs:hidden text-xs">{request.time.split(',')[0]}</span>
+                                <span className="xs:hidden text-sm">{request.time.split(',')[0]}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-2 shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0">
-                    <div className="flex items-center gap-1 text-gray-800 text-xs sm:text-sm">
+                    <div className="flex items-center gap-1 text-gray-800 text-sm sm:text-sm">
                         <Phone className="h-3 w-3 text-gray-600 shrink-0" />
                         <span className="font-medium hidden sm:inline">{request.contact}</span>
-                        <span className="font-medium sm:hidden text-xs">{request.contact.slice(0, 8)}...</span>
+                        <span className="font-medium sm:hidden text-sm">{request.contact.slice(0, 8)}...</span>
                     </div>
-                    <Button size="sm" className="bg-red-900 hover:bg-red-700 text-white whitespace-nowrap text-xs sm:text-sm px-3 sm:px-4 cursor-pointer">
+                    <Button size="sm" className="bg-red-900 hover:bg-red-700 text-white whitespace-nowrap text-sm sm:text-sm px-3 sm:px-4 cursor-pointer">
                         <AlertCircle className="h-3 w-3 mr-1" />
                         <span className="hidden sm:inline">Respond</span>
                         <span className="sm:hidden">Help</span>
@@ -171,10 +171,10 @@ export default function Requests() {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="mb-6 sm:mb-8 text-center">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
                         Emergency Blood Requests
                     </h1>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-200 px-2">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto px-4">
                         Recent requests for blood donations. <br />Help save lives today.
                     </p>
                 </div>
@@ -191,7 +191,7 @@ export default function Requests() {
                         {hasMoreRequests && (
                             <div className="text-center">
                                 <Link href="/requests">
-                                    <Button className="w-full sm:w-auto px-3 py-2 mt-4 text-base sm:text-lg font-semibold text-white cursor-pointer">
+                                    <Button className="w-full sm:w-auto px-3 py-2 mt-4 md:text-lg font-semibold text-white cursor-pointer">
                                         View All Requests
                                         <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
                                     </Button>
@@ -205,7 +205,7 @@ export default function Requests() {
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
                             No Recent Requests
                         </h3>
-                        <p className="text-sm sm:text-base text-gray-500">
+                        <p className="text-sm sm:text-base text-neutral-900">
                             There are no blood requests for today or yesterday.
                         </p>
                     </div>
