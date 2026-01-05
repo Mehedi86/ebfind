@@ -1,7 +1,7 @@
 "use client"
 
-import React from 'react'
-import { Heart, Users, Clock, Award, Shield, Droplet } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { Heart, Users, Clock, Award, Shield, Droplet, ChevronUp, ChevronDown } from 'lucide-react'
 
 export default function WhyDonate() {
   const reasons = [
@@ -37,6 +37,31 @@ export default function WhyDonate() {
     }
   ]
 
+  const [isSmall, setIsSmall] = useState(false);
+  const [isExpand, setIsExpand] = useState(false);
+  const [data, setData] = useState([])
+
+
+  useEffect(() => {
+    const checkScreen = () => {
+      if (typeof window !== "undefined") {
+        setIsSmall(window.innerWidth <= 768)
+      }
+    }
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, [])
+
+  const handleExpand = () => {
+
+    setIsExpand(!isExpand)
+  }
+
+  console.log(isSmall)
+
   return (
     <div className="w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
@@ -52,14 +77,14 @@ export default function WhyDonate() {
 
         {/* Reasons Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-6 mb-12 sm:mb-16">
-          {reasons.map((reason, index) => {
+          {(isSmall ? isExpand ? reasons : reasons.slice(0, 3) : reasons).map((reason, index) => {
             const IconComponent = reason.icon
             return (
               <div
                 key={index}
                 className="bg-white/10 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/30 hover:border-red-300/50 hover:-translate-y-2 overflow-hidden"
               >
-                
+
                 <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                   {/* Icon with animated background */}
                   <div className="mb-5 sm:mb-6">
@@ -67,7 +92,7 @@ export default function WhyDonate() {
                       <IconComponent className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                     </div>
                   </div>
-                  
+
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-red-600 transition-colors duration-300">
                     {reason.title}
                   </h3>
@@ -78,6 +103,9 @@ export default function WhyDonate() {
               </div>
             )
           })}
+          {isSmall ? <div className='w-full flex justify-center -mt-10'>
+            <button onClick={handleExpand} className='p-2 rounded-full border border-white/40 bg-white/20'>{isExpand ? <ChevronUp className='text-white text-2xl' /> : <ChevronDown className='text-white text-2xl' />}</button>
+          </div> : ''}
         </div>
 
         {/* Call to Action */}
@@ -86,7 +114,7 @@ export default function WhyDonate() {
             {/* Decorative background elements */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-amber-600/30 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-700/30 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
-            
+
             <div className="relative z-10">
               <div className="inline-block mb-3">
                 <div className="bg-white/25 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/40 shadow-md">
