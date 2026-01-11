@@ -11,7 +11,7 @@ import {
 
 export default function Banner() {
   return (
-    <div className="w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 my-4 sm:my-8 md:my-12 lg:my-16 mx-auto overflow-hidden h-46 md:h-75 lg:h-100">
+    <div className="w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 my-4 sm:my-8 md:my-12 lg:my-16 mx-auto overflow-hidden h-46 md:h-75 lg:h-100 xl:h-150">
       <Carousel 
         className="w-full h-full"
         opts={{
