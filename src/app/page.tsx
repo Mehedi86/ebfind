@@ -3,6 +3,7 @@ import Banner from "@/components/header/banner/Banner";
 import Requests from "@/components/contents/Requests";
 import WhyDonate from "@/components/contents/WhyDonate";
 import BoxSpinner from "@/components/animation/boxSpinner";
+import StatsCounter from "@/components/contents/StatsCounter";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <WhyDonate />
       <BoxSpinner position="top-10 right-20"/>
       <BoxSpinner position="top-120 left-20"/>
+      <StatsCounter/>
     </div>
   );
 }
