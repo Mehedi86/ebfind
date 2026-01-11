@@ -107,7 +107,7 @@ export default function WhyDonate() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-6 sm:mt-8 md:mt-10 text-center container mx-auto">
+        <div className="mt-6 sm:mt-8 md:mt-10 text-center">
           <div className="relative bg-linear-to-br from-red-600 via-red-700 to-amber-900 rounded p-6 sm:p-8 md:p-12 shadow-2xl overflow-hidden border-2 border-red-500/30 group hover:border-red-400/50 transition-all duration-500">
             {/* Animated linear overlay */}
             <div className="absolute inset-0 bg-linear-to-r from-red-600/50 via-amber-600/30 to-red-700/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
