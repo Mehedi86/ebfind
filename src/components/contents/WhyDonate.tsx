@@ -60,8 +60,6 @@ export default function WhyDonate() {
     setIsExpand(!isExpand)
   }
 
-  console.log(isSmall)
-
   return (
     <div className="w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
@@ -109,8 +107,8 @@ export default function WhyDonate() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-6 sm:mt-8 md:mt-10 text-center">
-          <div className="relative bg-linear-to-br from-red-600 via-red-700 to-amber-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl overflow-hidden border-2 border-red-500/30 group hover:border-red-400/50 transition-all duration-500">
+        <div className="mt-6 sm:mt-8 md:mt-10 text-center container mx-auto">
+          <div className="relative bg-linear-to-br from-red-600 via-red-700 to-amber-900 rounded p-6 sm:p-8 md:p-12 shadow-2xl overflow-hidden border-2 border-red-500/30 group hover:border-red-400/50 transition-all duration-500">
             {/* Animated linear overlay */}
             <div className="absolute inset-0 bg-linear-to-r from-red-600/50 via-amber-600/30 to-red-700/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             
@@ -125,7 +123,7 @@ export default function WhyDonate() {
             <div className="relative z-10">
               {/* Badge with enhanced styling */}
               <div className="inline-block mb-4 sm:mb-5">
-                <div className="bg-linear-to-r from-white/30 to-white/20 backdrop-blur-lg px-4 py-2 rounded-full border-2 border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-white/70">
+                <div className="bg-linear-to-r from-white/30 to-white/20 backdrop-blur-lg px-4 py-2 rounded border-2 border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-white/70">
                   <span className="text-white text-xs sm:text-sm font-bold tracking-wide uppercase">Join Us Today</span>
                 </div>
               </div>
@@ -144,7 +142,7 @@ export default function WhyDonate() {
               
               {/* Enhanced buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="group relative w-full sm:w-auto bg-linear-to-r from-white to-amber-50 text-red-700 hover:text-red-800 font-bold px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] hover:scale-110 active:scale-105 overflow-hidden border-2 border-white/30">
+                <button className="group relative w-full sm:w-auto bg-linear-to-r from-white to-amber-50 text-red-700 hover:text-red-800 font-bold px-8 sm:px-10 py-3.5 sm:py-4 rounded transition-all duration-300 text-sm sm:text-base shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] hover:scale-110 active:scale-105 overflow-hidden border-2 border-white/30">
                   {/* Button shimmer */}
                   <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   
@@ -154,10 +152,10 @@ export default function WhyDonate() {
                   </span>
                   
                   {/* Ripple effect on hover */}
-                  <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
+                  <div className="absolute inset-0 rounded bg-white/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
                 </button>
                 
-                <button className="group relative w-full sm:w-auto bg-white/20 backdrop-blur-lg border-2 border-white/60 text-white hover:text-white hover:bg-white/30 hover:border-white font-bold px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base shadow-xl hover:shadow-2xl hover:scale-110 active:scale-105 overflow-hidden">
+                <button className="group relative w-full sm:w-auto bg-white/20 backdrop-blur-lg border-2 border-white/60 text-white hover:text-white hover:bg-white/30 hover:border-white font-bold px-8 sm:px-10 py-3.5 sm:py-4 rounded transition-all duration-300 text-sm sm:text-base shadow-xl hover:shadow-2xl hover:scale-110 active:scale-105 overflow-hidden">
                   {/* Button glow */}
                   <div className="absolute inset-0 bg-linear-to-r from-red-500/20 via-amber-500/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
                   
