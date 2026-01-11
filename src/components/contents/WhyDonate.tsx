@@ -110,34 +110,71 @@ export default function WhyDonate() {
 
         {/* Call to Action */}
         <div className="mt-6 sm:mt-8 md:mt-10 text-center">
-          <div className="relative bg-linear-to-br from-amber-800 via-amber-900 to-amber-950 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl overflow-hidden border border-amber-700/50">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-amber-600/30 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-700/30 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+          <div className="relative bg-linear-to-br from-red-600 via-red-700 to-amber-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl overflow-hidden border-2 border-red-500/30 group hover:border-red-400/50 transition-all duration-500">
+            {/* Animated linear overlay */}
+            <div className="absolute inset-0 bg-linear-to-r from-red-600/50 via-amber-600/30 to-red-700/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            
+            {/* Enhanced decorative background elements with animation */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-600/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-red-400/30 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 animate-pulse" style={{ animationDelay: '0.5s' }} />
+            
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
 
             <div className="relative z-10">
-              <div className="inline-block mb-3">
-                <div className="bg-white/25 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/40 shadow-md">
-                  <span className="text-white text-xs font-semibold">Join Us Today</span>
+              {/* Badge with enhanced styling */}
+              <div className="inline-block mb-4 sm:mb-5">
+                <div className="bg-linear-to-r from-white/30 to-white/20 backdrop-blur-lg px-4 py-2 rounded-full border-2 border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-white/70">
+                  <span className="text-white text-xs sm:text-sm font-bold tracking-wide uppercase">Join Us Today</span>
                 </div>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">
-                Ready to Make a Difference?
+              
+              {/* Enhanced heading */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-5 drop-shadow-2xl leading-tight">
+                <span className="bg-linear-to-r from-white via-amber-100 to-white bg-clip-text text-transparent">
+                  Ready to Make a Difference?
+                </span>
               </h3>
-              <p className="text-sm sm:text-base text-amber-50 mb-5 sm:mb-6 max-w-2xl mx-auto leading-relaxed">
+              
+              {/* Enhanced description */}
+              <p className="text-sm sm:text-base md:text-lg text-amber-50/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
                 Join thousands of heroes who donate blood regularly. Your contribution can give someone a second chance at life.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <button className="group relative w-full sm:w-auto bg-white text-amber-900 hover:bg-amber-50 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 overflow-hidden border border-white/20">
-                  <span className="relative z-10 flex items-center justify-center gap-2">
+              
+              {/* Enhanced buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="group relative w-full sm:w-auto bg-linear-to-r from-white to-amber-50 text-red-700 hover:text-red-800 font-bold px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] hover:scale-110 active:scale-105 overflow-hidden border-2 border-white/30">
+                  {/* Button shimmer */}
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  
+                  <span className="relative z-10 flex items-center justify-center gap-2.5">
                     Become a Donor
-                    <Heart className="h-4 w-4 group-hover:scale-110 transition-transform fill-current" />
+                    <Heart className="h-5 w-5 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 fill-current" />
                   </span>
-                  <div className="absolute inset-0 bg-linear-to-r from-amber-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Ripple effect on hover */}
+                  <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
                 </button>
-                <button className="w-full sm:w-auto bg-white/15 backdrop-blur-md border border-white/60 text-white hover:bg-white/25 hover:border-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-105">
-                  Learn More
+                
+                <button className="group relative w-full sm:w-auto bg-white/20 backdrop-blur-lg border-2 border-white/60 text-white hover:text-white hover:bg-white/30 hover:border-white font-bold px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base shadow-xl hover:shadow-2xl hover:scale-110 active:scale-105 overflow-hidden">
+                  {/* Button glow */}
+                  <div className="absolute inset-0 bg-linear-to-r from-red-500/20 via-amber-500/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                  
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Learn More
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </button>
+              </div>
+              
+              {/* Additional decorative elements */}
+              <div className="mt-8 sm:mt-10 flex justify-center items-center gap-2">
+                <div className="h-1 w-12 bg-linear-to-r from-transparent via-white/40 to-transparent rounded-full" />
+                <Heart className="h-4 w-4 text-white/60 animate-pulse" />
+                <div className="h-1 w-12 bg-linear-to-r from-transparent via-white/40 to-transparent rounded-full" />
               </div>
             </div>
           </div>
