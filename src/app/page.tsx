@@ -5,6 +5,7 @@ import WhyDonate from "@/components/contents/WhyDonate";
 import BoxSpinner from "@/components/animation/boxSpinner";
 import StatsCounter from "@/components/contents/StatsCounter";
 import Quotes from "@/components/contents/Quotes";
+import Info from "@/components/contents/Info";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <BoxSpinner position="top-120 left-20"/>
       <StatsCounter/>
       <Quotes/>
+      <Info/>
     </div>
   );
 }

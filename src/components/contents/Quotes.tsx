@@ -84,7 +84,7 @@ export default function Quotes() {
                         Inspiring <span className="text-transparent bg-clip-text bg-linear-to-r from-red-400 via-red-500 to-red-400">Testimonials</span>
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto px-4">
-                        Support each other, make a storng community, because we need it very much.
+                        Support each other, make a storng community, because <br /> we need it very much.
                     </p>
                 </div>
 
@@ -103,7 +103,7 @@ export default function Quotes() {
                                 <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-10 md:p-14 border border-white/20 h-full flex flex-col justify-center">
                                     {/* Quote Icon */}
                                     <div className="flex justify-center mb-6">
-                                        <div className="bg-gradient-to-br from-red-500 to-red-600 p-4 rounded-2xl">
+                                        <div className="bg-linear-to-br from-red-500 to-red-600 p-4 rounded-2xl">
                                             <Quote className="h-8 w-8 text-white" fill="currentColor" />
                                         </div>
                                     </div>
