@@ -222,8 +222,8 @@ export default function Info() {
         </div>
 
         {/* Tab Content - Paragraph Style */}
-        <div className="h-150 overflow-y-scroll custom-scrollbar">
-          <div className="bg-white/5 backdrop-blur-md rounded p-8 sm:p-10 md:p-12 border border-white/10">
+        <div className="h-100 overflow-y-scroll custom-scrollbar">
+          <div className="bg-white/5 backdrop-blur-md rounded p-4 border border-white/10">
             {renderContent()}
           </div>
         </div>
