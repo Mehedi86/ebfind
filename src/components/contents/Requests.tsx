@@ -171,9 +171,9 @@ export default function Requests() {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="mb-6 sm:mb-8 text-center">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
-                        Emergency Blood Requests
-                    </h1>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+                        Emergency Blood <span className="text-transparent bg-clip-text bg-linear-to-r from-red-400 via-red-500 to-red-400">Requests</span>
+                    </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto px-4">
                         Recent requests for blood donations. <br />Help save lives today.
                     </p>
