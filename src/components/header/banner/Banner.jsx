@@ -11,7 +11,7 @@ import {
 
 export default function Banner() {
   return (
-    <div className="w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 my-4 sm:my-8 md:my-12 lg:my-16 mx-auto overflow-hidden h-46 md:h-75 lg:h-100 xl:h-150">
+    <div className="w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 my-4 sm:my-8 md:my-12 lg:mb-16 mx-auto overflow-hidden">
       <Carousel 
         className="w-full h-full"
         opts={{
@@ -20,19 +20,19 @@ export default function Banner() {
         }}
       >
         <CarouselContent className="ml-0 h-full">
-          <CarouselItem className="pl-0 basis-full h-full">
+          <CarouselItem className="pl-0 basis-fulll">
             <img 
               src="/image/banner/banner1.jpg" 
               alt="Banner 1" 
-              className="w-full h-full object-cover"
+              className="w-full h-46 md:h-75 object-cover"
             />
           </CarouselItem>
           
-          <CarouselItem className="pl-0 basis-full h-full">
+          <CarouselItem className="pl-0 basis-full">
             <img 
               src="/image/banner/banner2.jpg" 
               alt="Banner 2" 
-              className="w-full h-full object-cover"
+              className="w-full h-46 md:h-75 object-cover"
             />
           </CarouselItem>
         </CarouselContent>
