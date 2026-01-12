@@ -65,8 +65,8 @@ export default function WhyDonate() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6 sm:mb-8 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
-            Why Donate Blood?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+            Why Donate <span className="text-transparent bg-clip-text bg-linear-to-r from-red-400 via-red-500 to-red-400">Blood?</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto px-4">
             Blood donation is a simple act of kindness that can make a profound difference in someone's life. Here's why your donation matters.
@@ -129,7 +129,7 @@ export default function WhyDonate() {
               </div>
               
               {/* Enhanced heading */}
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-5 drop-shadow-2xl leading-tight">
+              <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white mb-4 sm:mb-5 drop-shadow-2xl leading-tight">
                 <span className="bg-linear-to-r from-white via-amber-100 to-white bg-clip-text text-transparent">
                   Ready to Make a Difference?
                 </span>

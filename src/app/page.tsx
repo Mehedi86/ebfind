@@ -4,6 +4,7 @@ import Requests from "@/components/contents/Requests";
 import WhyDonate from "@/components/contents/WhyDonate";
 import BoxSpinner from "@/components/animation/boxSpinner";
 import StatsCounter from "@/components/contents/StatsCounter";
+import Quotes from "@/components/contents/Quotes";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BoxSpinner position="top-10 right-20"/>
       <BoxSpinner position="top-120 left-20"/>
       <StatsCounter/>
+      <Quotes/>
     </div>
   );
 }
