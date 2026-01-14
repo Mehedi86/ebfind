@@ -9,6 +9,7 @@ import Info from "@/components/contents/Info";
 import Inspire from "@/components/contents/Inspire";
 import Story from "@/components/contents/Story";
 import Volunteer from "@/components/contents/Volunteer";
+import Findus from "@/components/contents/Findus";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Inspire/>
       <Story/>
       <Volunteer/>
+      <Findus/>
     </div>
   );
 }
