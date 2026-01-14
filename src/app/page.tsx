@@ -7,6 +7,8 @@ import StatsCounter from "@/components/contents/StatsCounter";
 import Quotes from "@/components/contents/Quotes";
 import Info from "@/components/contents/Info";
 import Inspire from "@/components/contents/Inspire";
+import Story from "@/components/contents/Story";
+import Volunteer from "@/components/contents/Volunteer";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <Quotes/>
       <Info/>
       <Inspire/>
+      <Story/>
+      <Volunteer/>
     </div>
   );
 }
