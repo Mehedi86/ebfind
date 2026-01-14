@@ -185,7 +185,7 @@ export default function Info() {
   }
 
   return (
-    <section className="w-full py-8 relative overflow-hidden">
+    <section className="w-full bg-linear-to-br from-gray-900 via-red-950/50 to-gray-900 py-8 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12">

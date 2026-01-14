@@ -75,7 +75,7 @@ export default function Quotes() {
     return (
         <section
             id="quotes-section"
-            className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 relative"
+            className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-linear-to-br from-gray-900 via-red-950/50 to-gray-900"
         >
             <div className="max-w-5xl mx-auto">
                 {/* Section Header */}
