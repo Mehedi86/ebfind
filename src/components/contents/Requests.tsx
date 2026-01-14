@@ -185,7 +185,7 @@ export default function Requests() {
     const hasMoreRequests = allRequests.length > 4
 
     return (
-        <div className="w-full py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-neutral-900/30">
+        <div className="w-full py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-900 via-red-950/50 to-gray-900">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="mb-6 sm:mb-8 text-center">
