@@ -6,6 +6,7 @@ import BoxSpinner from "@/components/animation/boxSpinner";
 import StatsCounter from "@/components/contents/StatsCounter";
 import Quotes from "@/components/contents/Quotes";
 import Info from "@/components/contents/Info";
+import Inspire from "@/components/contents/Inspire";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <StatsCounter/>
       <Quotes/>
       <Info/>
+      <Inspire/>
     </div>
   );
 }
