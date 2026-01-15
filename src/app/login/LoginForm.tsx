@@ -15,7 +15,7 @@ export default function LoginForm({ onSubmit }: LoginFormProps) {
 
     return (
         <div>
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-2">
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                         Email Address
