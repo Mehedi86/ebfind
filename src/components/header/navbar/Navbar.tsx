@@ -139,7 +139,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <div className={`pt-4 space-y-2 border-t transition-colors ${scrolled ? 'border-gray-200' : 'border-white/20'
+          <div className={`pt-4 space-y-4 border-t transition-colors ${scrolled ? 'border-gray-200' : 'border-white/20'
             }`}>
             <Link href="/login">
               <Button
@@ -155,7 +155,7 @@ export default function Navbar() {
               </Button>
             </Link>
             <Button
-              className="w-full justify-start bg-red-600 hover:bg-red-700 text-white"
+              className="w-full justify-start bg-red-600 hover:bg-red-700 text-white mt-2"
               onClick={() => setIsMenuOpen(false)}
             >
               <User className="h-4 w-4 mr-2" />
