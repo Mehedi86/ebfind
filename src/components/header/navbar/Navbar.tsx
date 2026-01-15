@@ -88,13 +88,15 @@ export default function Navbar() {
                 Login
               </Button>
             </Link>
-            <Button
-              size="sm"
-              className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all"
-            >
-              <User className="h-4 w-4 mr-2" />
-              Register
-            </Button>
+            <Link href="/register">
+              <Button
+                size="sm"
+                className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all"
+              >
+                <User className="h-4 w-4 mr-2" />
+                Register
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -154,13 +156,15 @@ export default function Navbar() {
                 Login
               </Button>
             </Link>
-            <Button
-              className="w-full justify-start bg-red-600 hover:bg-red-700 text-white mt-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <User className="h-4 w-4 mr-2" />
-              Register
-            </Button>
+            <Link href="/register">
+              <Button
+                className="w-full justify-start bg-red-600 hover:bg-red-700 text-white mt-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <User className="h-4 w-4 mr-2" />
+                Register
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
