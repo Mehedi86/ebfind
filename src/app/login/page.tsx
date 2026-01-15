@@ -40,7 +40,7 @@ export default function page() {
                     </div>
 
                     {/* Login Form Card */}
-                    <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl p-8 sm:p-10">
+                    <div className="bg-white/10 backdrop-blur-md rounded border border-white/20 shadow-2xl p-8 sm:p-10">
 
                         <LoginForm onSubmit={methods.handleSubmit(onSubmit)} />
                         {/* Divider */}
@@ -59,7 +59,7 @@ export default function page() {
                         <div className="mt-6 grid grid-cols-2 gap-3">
                             <button
                                 type="button"
-                                className="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 border border-white/20 rounded-lg bg-white/5 text-white font-medium hover:bg-white/10 transition-all duration-300"
+                                className="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 border border-white/20 rounded bg-white/5 text-white font-medium hover:bg-white/10 transition-all duration-300"
                             >
                                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -71,7 +71,7 @@ export default function page() {
                             </button>
                             <button
                                 type="button"
-                                className="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 border border-white/20 rounded-lg bg-white/5 text-white font-medium hover:bg-white/10 transition-all duration-300"
+                                className="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 border border-white/20 rounded bg-white/5 text-white font-medium hover:bg-white/10 transition-all duration-300"
                             >
                                 <IoLogoFacebook />
                                 Facebook
