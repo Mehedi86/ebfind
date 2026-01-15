@@ -31,7 +31,7 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
                             {...register("name", { required: true })}
                             id="name"
                             type="text"
-                            className="block w-full pl-10 pr-3 py-3 border border-white/20 rounded-lg bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
+                            className="block w-full pl-10 pr-3 py-3 border border-white/20 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
                             placeholder="John Doe"
                         />
                     </div>
@@ -50,7 +50,7 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
                             {...register("email", { required: true })}
                             id="email"
                             type="email"
-                            className="block w-full pl-10 pr-3 py-3 border border-white/20 rounded-lg bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
+                            className="block w-full pl-10 pr-3 py-3 border border-white/20 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
                             placeholder="you@example.com"
                         />
                     </div>
@@ -69,7 +69,7 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
                             {...register("password", { required: true, minLength: 6 })}
                             id="password"
                             type={showPassword ? "text" : "password"}
-                            className="block w-full pl-10 pr-12 py-3 border border-white/20 rounded-lg bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
+                            className="block w-full pl-10 pr-12 py-3 border border-white/20 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
                             placeholder="Enter your password"
                         />
                         <button
@@ -102,7 +102,7 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
                             })}
                             id="confirmPassword"
                             type={showConfirmPassword ? "text" : "password"}
-                            className="block w-full pl-10 pr-12 py-3 border border-white/20 rounded-lg bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
+                            className="block w-full pl-10 pr-12 py-3 border border-white/20 rounded bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all"
                             placeholder="Confirm your password"
                         />
                         <button
@@ -146,7 +146,7 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
                 <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-lg bg-red-500 hover:bg-red-600 text-white font-semibold text-base transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg hover:shadow-red-500/50"
+                    className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded bg-red-500 hover:bg-red-600 text-white font-semibold text-base transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg hover:shadow-red-500/50"
                 >
                     {isLoading ? (
                         <>
