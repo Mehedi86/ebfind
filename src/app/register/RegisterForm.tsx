@@ -17,7 +17,7 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
 
     return (
         <div>
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-2">
                 {/* Name Field */}
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
