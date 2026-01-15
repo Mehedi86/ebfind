@@ -41,7 +41,7 @@ export default function page() {
                     </div>
 
                     {/* Register Form Card */}
-                    <div className="bg-white/10 backdrop-blur-md rounded border border-white/20 shadow-2xl py-4">
+                    <div className="bg-white/10 backdrop-blur-md rounded border border-white/20 shadow-2xl py-4 px-2">
 
                         <RegisterForm onSubmit={methods.handleSubmit(onSubmit)} />
                         {/* Divider */}
@@ -51,11 +51,12 @@ export default function page() {
                                     <div className="w-full border-t border-white/20"></div>
                                 </div>
                                 <div className="relative flex justify-center text-sm">
-                                    <span className="px-2 bg-white/10 text-gray-400">Or continue with</span>
                                 </div>
                             </div>
                         </div>
-
+                        <div className='text-center'>
+                            <span className="px-2 bg-white/10 text-gray-400">Or continue with</span>
+                        </div>
                         {/* Social Login Buttons */}
                         <div className="mt-6 grid grid-cols-2 gap-3">
                             <button
