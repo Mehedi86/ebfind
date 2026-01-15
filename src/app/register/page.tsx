@@ -41,7 +41,7 @@ export default function page() {
                     </div>
 
                     {/* Register Form Card */}
-                    <div className="bg-white/10 backdrop-blur-md rounded border border-white/20 shadow-2xl p-8 sm:p-10">
+                    <div className="bg-white/10 backdrop-blur-md rounded border border-white/20 shadow-2xl py-4">
 
                         <RegisterForm onSubmit={methods.handleSubmit(onSubmit)} />
                         {/* Divider */}
